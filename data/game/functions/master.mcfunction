@@ -24,3 +24,6 @@ tag @a[tag=respawn] remove dead
 tag @a[tag=dead] add out
 tag @a[tag=out] remove dead
 
+tp @a[team=Blue,scores={respawn=0},tag=respawn] 200 0 200
+tag @a[team=Blue,scores={respawn=0}] remove respawn
+
