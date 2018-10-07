@@ -10,6 +10,7 @@ clear dvdcd minecraft:blue_wool
 data merge entity @e[type=armor_stand,limit=1,sort=random,tag=goldspawn] {CustomNameVisible:0b,Invisible:1b,Marker:1b}
 data merge entity @e[type=armor_stand,limit=1,sort=random,tag=ironspawn] {CustomNameVisible:0b,Invisible:1b,Marker:1b}
 data merge entity @e[type=armor_stand,limit=1,sort=random,tag=spawnmarker] {CustomNameVisible:0b,Invisible:1b,Marker:1b}
+data merge entity @e[type=armor_stand,limit=1,sort=random,tag=bluebed] {CustomNameVisible:0b,Invisible:1b,Marker:1b}
 
 #Check for dead players, if so, add dead tag and set deaths to 0
 tag @a[tag=ingame,scores={deaths=1..}] add dead
@@ -27,3 +28,6 @@ tag @a[tag=out] remove dead
 tp @a[team=Blue,scores={respawn=0},tag=respawn] 200 0 200
 tag @a[team=Blue,scores={respawn=0}] remove respawn
 
+#Place the blue team onto the out team if thair bed is removed
+execute at @e[type=armor_stand,tag=bluebed] if block ~ ~-0.1 ~ minecraft:blue_bed run team join Blue Blue
+execute at @e[type=armor_stand,tag=bluebed] if block ~ ~-0.1 ~ minecraft:air run team join out Blue
