@@ -7,3 +7,6 @@ data merge entity @e[type=armor_stand,limit=1,sort=random,tag=goldspawn] {Custom
 data merge entity @e[type=armor_stand,limit=1,sort=random,tag=ironspawn] {CustomNameVisible:1b,Invisible:0b,Marker:0b}
 data merge entity @e[type=armor_stand,limit=1,sort=random,tag=spawnmarker] {CustomNameVisible:1b,Invisible:0b,Marker:0b}
 data merge entity @e[type=armor_stand,limit=1,sort=random,tag=bluebed] {CustomNameVisible:1b,Invisible:0b,Marker:0b}
+data merge entity @e[type=armor_stand,limit=1,sort=random,tag=redbed] {CustomNameVisible:1b,Invisible:0b,Marker:0b}
+data merge entity @e[type=armor_stand,limit=1,sort=random,tag=yellowbed] {CustomNameVisible:1b,Invisible:0b,Marker:0b}
+data merge entity @e[type=armor_stand,limit=1,sort=random,tag=greenbed] {CustomNameVisible:1b,Invisible:0b,Marker:0b}
