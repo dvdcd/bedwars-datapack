@@ -5,7 +5,9 @@
 
 # Once a second
 scoreboard players add #second tick 1
-function game:respawn
+
+#Call The Respawn Fuction if gamemode is active
+execute if score mode BWmode matches 1 run function game:respawn
 
 # Once Every 10
 execute if score #second tick matches 1 run function #main:tensec

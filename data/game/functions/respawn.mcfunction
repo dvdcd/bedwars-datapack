@@ -1,4 +1,4 @@
-# Desc: Runs if a player needs to be respawned
+# Desc: Subtracts one score from everyone that needs to be respawned
 #
 # Called by: #main:second
 
