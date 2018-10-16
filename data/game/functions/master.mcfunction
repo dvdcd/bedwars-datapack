@@ -35,18 +35,19 @@ tag @a[team=Blue,scores={respawn=0}] remove respawn
 
 #Place the blue team onto the out team if thair bed is removed
 execute at @e[type=armor_stand,tag=bluebed] if block ~ ~-0.1 ~ minecraft:blue_bed run team join Blue Blue
-execute at @e[type=armor_stand,tag=bluebed] if block ~ ~-0.1 ~ minecraft:air run team join out Blue
+execute at @e[type=armor_stand,tag=bluebed] if block ~ ~-0.1 ~ minecraft:air run team join Out Blue
 
 #Place the yellow team onto the out team if thair bed is removed
 execute at @e[type=armor_stand,tag=yellowbed] if block ~ ~-0.1 ~ minecraft:yellow_bed run team join Yellow Yellow
-execute at @e[type=armor_stand,tag=yellowbed] if block ~ ~-0.1 ~ minecraft:air run team join out Yellow
+execute at @e[type=armor_stand,tag=yellowbed] if block ~ ~-0.1 ~ minecraft:air run team join Out Yellow
 
 #Place the red team onto the out team if thair bed is removed
 execute at @e[type=armor_stand,tag=redbed] if block ~ ~-0.1 ~ minecraft:red_bed run team join Red Red
-execute at @e[type=armor_stand,tag=redbed] if block ~ ~-0.1 ~ minecraft:air run team join out Red
+execute at @e[type=armor_stand,tag=redbed] if block ~ ~-0.1 ~ minecraft:air run team join Out Red
 
 #Place the green team onto the out team if thair bed is removed
 execute at @e[type=armor_stand,tag=greenbed] if block ~ ~-0.1 ~ minecraft:green_bed run team join Green Green
-execute at @e[type=armor_stand,tag=greenbed] if block ~ ~-0.1 ~ minecraft:air run team join out Green
+execute at @e[type=armor_stand,tag=greenbed] if block ~ ~-0.1 ~ minecraft:air run team join Out Green
+
 
 
