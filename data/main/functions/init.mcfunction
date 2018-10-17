@@ -1,7 +1,6 @@
 # Desc: Runs on reload and startup
 #
 # Called by: #minecraft:init
-say please work
 tellraw @a ["",{"text":"Loading Bedwars Core...","color":"green"}]
 
 #Attempt to add scoreboard objectives
@@ -25,5 +24,14 @@ team modify Yellow color yellow
 team modify Green color green
 team modify Out color gray
 
+#Add all the teams to the player scoreboard with a default value of 0
+scoreboard players set Blue Players 0
+scoreboard players set Red Players 0
+scoreboard players set Yellow Players 0
+scoreboard players set Green Players 0
+
+#Set the Players scoreboard to sidebar display mode
+scoreboard objectives setdisplay sidebar Players
 
 tellraw @a ["",{"text":"Loaded!","color":"dark_green"}]
+playsound minecraft:block.beacon.activate voice @a
