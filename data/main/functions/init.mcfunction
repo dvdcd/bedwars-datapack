@@ -9,6 +9,7 @@ scoreboard objectives add BWmode dummy
 scoreboard objectives add tick dummy
 scoreboard objectives add deaths deathCount
 scoreboard objectives add Players dummy
+scoreboard objectives add BWout dummy
 
 #Attempt to add all the teams
 team add Out
@@ -33,5 +34,13 @@ scoreboard players set Green Players 0
 #Set the Players scoreboard to sidebar display mode
 scoreboard objectives setdisplay sidebar Players
 
+#Add The dummy players to thair colored teams
+team join Green Green
+team join Blue Blue
+team join Red Red
+team join Yellow Yellow
+
+
+#Wow cool status messages and stuff
 tellraw @a ["",{"text":"Loaded!","color":"dark_green"}]
 playsound minecraft:block.beacon.activate voice @a
