@@ -7,13 +7,7 @@ advancement revoke @a only adventure:root
 clear dvdcd minecraft:blue_wool
 
 #Pull Armor Stands Into Game Mode
-data merge entity @e[type=armor_stand,limit=1,sort=random,tag=goldspawn] {CustomNameVisible:0b,Invisible:1b,Marker:1b}
-data merge entity @e[type=armor_stand,limit=1,sort=random,tag=ironspawn] {CustomNameVisible:0b,Invisible:1b,Marker:1b}
-data merge entity @e[type=armor_stand,limit=1,sort=random,tag=spawnmarker] {CustomNameVisible:0b,Invisible:1b,Marker:1b}
-data merge entity @e[type=armor_stand,limit=1,sort=random,tag=bluebed] {CustomNameVisible:0b,Invisible:1b,Marker:1b}
-data merge entity @e[type=armor_stand,limit=1,sort=random,tag=redbed] {CustomNameVisible:0b,Invisible:1b,Marker:1b}
-data merge entity @e[type=armor_stand,limit=1,sort=random,tag=yellowbed] {CustomNameVisible:0b,Invisible:1b,Marker:1b}
-data merge entity @e[type=armor_stand,limit=1,sort=random,tag=greenbed] {CustomNameVisible:0b,Invisible:1b,Marker:1b}
+data merge entity @e[type=armor_stand,limit=1,sort=random,tag=BWstand] {CustomNameVisible:0b,Invisible:1b,Marker:1b}
 
 #Check for dead players, if so, add dead tag and set deaths to 0
 tag @a[tag=ingame,scores={deaths=1..}] add dead
@@ -48,6 +42,3 @@ execute at @e[type=armor_stand,tag=redbed] if block ~ ~-0.1 ~ minecraft:air run 
 #Place the green team onto the out team if thair bed is removed
 execute at @e[type=armor_stand,tag=greenbed] if block ~ ~-0.1 ~ minecraft:green_bed run team join Green Green
 execute at @e[type=armor_stand,tag=greenbed] if block ~ ~-0.1 ~ minecraft:air run team join Out Green
-
-
-
