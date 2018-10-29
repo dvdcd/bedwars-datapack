@@ -19,8 +19,9 @@ scoreboard players set @a[tag=dead,tag=respawn] respawn 10
 tag @a[tag=respawn] remove dead
 
 #Add any other dead players the "out" tag and remove the dead tag
-tag @a[tag=dead] add out
-tag @a[tag=out] remove dead
+tag @a[tag=dead] add procout
+tag @a[tag=procout] remove dead
+function game:out
 
 
 #WIP Testing with the respawn stuff
