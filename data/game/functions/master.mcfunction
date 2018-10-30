@@ -21,6 +21,8 @@ tag @a[tag=respawn] remove dead
 
 #Add any other dead players the "out" tag and remove the dead tag
 execute as @a[team=Blue,tag=dead] if score Blue BWout matches 1 run tag add out
+execute as @a[team=Blue,tag=dead] if score Blue BWout matches 1 run tag @s add out
+execute as @a[team=Blue,tag=out,tag=dead,limit=1] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" Is out of the game!","color":"aqua"}]
 tag @a[tag=out] remove dead
 
 
