@@ -7,27 +7,28 @@ advancement revoke @a only adventure:root
 clear dvdcd minecraft:blue_wool
 
 #Pull Armor Stands Into Game Mode
-execute as @e[type=armor_stand,limit=1,sort=random,tag=BWstand] run data merge entity @s {CustomNameVisible:0b,Invisible:1b,Marker:1b}
+execute as @e[type=armor_stand,tag=BWstand] run data merge entity @s {CustomNameVisible:0b,Invisible:1b,Marker:1b}
 
 #Check for dead players, if so, add dead tag and set deaths to 0
 tag @a[tag=ingame,scores={deaths=1..}] add dead
 scoreboard players set @a[tag=dead] deaths 0
 
 #Check if dead players have thair beds. if so, add tag "respawn" and remove tag dead
-execute as @a[team=Blue,tag=dead] if score Blue BWout matches 0 run tag add respawn
+execute as @a[team=Blue,tag=dead] if score Blue BWout matches 0 run tag @s add respawn
 
 scoreboard players set @a[tag=dead,tag=respawn] respawn 10
 tag @a[tag=respawn] remove dead
 
 #Add any other dead players the "out" tag and remove the dead tag
-execute as @a[team=Blue,tag=dead] if score Blue BWout matches 1 run tag add out
 execute as @a[team=Blue,tag=dead] if score Blue BWout matches 1 run tag @s add out
 execute as @a[team=Blue,tag=out,tag=dead,limit=1] run tellraw @a ["",{"selector":"@s","color":"gold"},{"text":" Is out of the game!","color":"aqua"}]
 tag @a[tag=out] remove dead
 
-
 #WIP Testing with the respawn stuff
-tp @a[team=Blue,scores={respawn=0},tag=respawn] 200 0 200
+execute at @e[type=armor_stand,tag=bluespawn] run tp @a[team=Blue,scores={respawn=0},tag=respawn] ~ ~ ~
+execute at @e[type=armor_stand,tag=redspawn] run tp @a[team=Red,scores={respawn=0},tag=respawn] ~ ~ ~
+execute at @e[type=armor_stand,tag=greenspawn] run tp @a[team=Green,scores={respawn=0},tag=respawn] ~ ~ ~
+execute at @e[type=armor_stand,tag=yellowspawn] run tp @a[team=Yellow,scores={respawn=0},tag=respawn] ~ ~ ~
 tag @a[team=Blue,scores={respawn=0}] remove respawn
 
 #Place the blue team onto the out scoreboard if thair bed is removed
