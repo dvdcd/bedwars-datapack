@@ -7,7 +7,7 @@ advancement revoke @a only adventure:root
 clear dvdcd minecraft:blue_wool
 
 #Pull Armor Stands Into Game Mode
-data merge entity @e[type=armor_stand,limit=1,sort=random,tag=BWstand] {CustomNameVisible:0b,Invisible:1b,Marker:1b}
+execute as @e[type=armor_stand,limit=1,sort=random,tag=BWstand] run data merge entity @s {CustomNameVisible:0b,Invisible:1b,Marker:1b}
 
 #Check for dead players, if so, add dead tag and set deaths to 0
 tag @a[tag=ingame,scores={deaths=1..}] add dead
